@@ -17,8 +17,6 @@ docker run -v  $(pwd)/postgresql.conf:/etc/postgresql/postgresql.conf -e POSTGRE
 
 Some of optimizations are implemented as low-level kernel configuration. The --privileged flag can be used to run with escalated priviliges.
 
-Note, with systems with insufficient memory, you may receive the error message ***FATAL:  could not map anonymous shared memory: Cannot allocate memory*** requiring adjustment of the memeory allocated in the configuration file.
-
 
 ```
 docker run --privileged -v  $(pwd)/postgresql.conf:/etc/postgresql/postgresql.conf -e POSTGRES_PASSWORD=mysecretpassword  -d postgres -c config_file=/etc/postgresql/postgresql.conf
